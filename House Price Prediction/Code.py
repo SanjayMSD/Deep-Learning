@@ -200,38 +200,38 @@ plt.show()
 # ANN (Artificial Neural Network)
 ############################################################################################
 
-# from tensorflow.keras.models import Sequential
-# from tensorflow.keras.layers import Dense
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
-# model = Sequential()
+model = Sequential()
 
-# model.add(Dense(19,activation='relu'))
-# model.add(Dense(19,activation='relu'))
-# model.add(Dense(19,activation='relu'))
-# model.add(Dense(19,activation='relu'))
-# model.add(Dense(1))
+model.add(Dense(19,activation='relu'))
+model.add(Dense(19,activation='relu'))
+model.add(Dense(19,activation='relu'))
+model.add(Dense(19,activation='relu'))
+model.add(Dense(1))
 
-# model.compile(optimizer='adam',loss='mse')
+model.compile(optimizer='adam',loss='mse')
 
-# model.fit(x=X_train,y=y_train.values,validation_data=(X_test,y_test.values),
-#           batch_size=128,epochs=400)
+model.fit(x=X_train,y=y_train.values,validation_data=(X_test,y_test.values),
+          batch_size=128,epochs=400)
 
-# losses = pd.DataFrame(model.history.history)
-# losses.plot()
+losses = pd.DataFrame(model.history.history)
+losses.plot()
 
-# from sklearn.metrics import mean_squared_error,mean_absolute_error,explained_variance_score
+from sklearn.metrics import mean_squared_error,mean_absolute_error,explained_variance_score
 
-# predictions = model.predict(X_test)
-# mean_absolute_error(y_test,predictions)
+predictions = model.predict(X_test)
+mean_absolute_error(y_test,predictions)
 
-# mean_squared_error(y_test,predictions)
+mean_squared_error(y_test,predictions)
 
-# mean_squared_error(y_test,predictions)**0.5
+mean_squared_error(y_test,predictions)**0.5
 
-# explained_variance_score(y_test,predictions)
+explained_variance_score(y_test,predictions)
 
-# # Our predictions
-# plt.figure(figsize=(10,6))
-# plt.scatter(y_test,predictions)
-# # Perfect predictions
-# plt.plot(y_test,y_test,'r')
+# Our predictions
+plt.figure(figsize=(10,6))
+plt.scatter(y_test,predictions)
+# Perfect predictions
+plt.plot(y_test,y_test,'r')
